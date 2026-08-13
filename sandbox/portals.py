@@ -1,0 +1,4 @@
+PORTALS = [
+    'sandbox:squeeze',
+]
+
