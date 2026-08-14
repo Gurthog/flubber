@@ -32,14 +32,22 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
 ]
 
-# Cloudflare
 
-if not DEBUG:
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# Cloudflare prod
 
-    SECURE_SSL_REDIRECT = True
+# if not DEBUG:
+CSRF_TRUSTED_ORIGINS = [
+    'https://flubber.icu',
+    'https://www.flubber.icu',
+]
 
-    CSRF_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_SECURE = True
+
+SECURE_SSL_REDIRECT = True
 
 
 # Application definition
