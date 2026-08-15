@@ -35,19 +35,19 @@ ALLOWED_HOSTS = [
 
 # Cloudflare prod
 
-# if not DEBUG:
-CSRF_TRUSTED_ORIGINS = [
-    'https://flubber.icu',
-    'https://www.flubber.icu',
-]
+if not DEBUG:
+    CSRF_TRUSTED_ORIGINS = [
+        'https://flubber.icu',
+        'https://www.flubber.icu',
+    ]
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
 
-SESSION_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
 
-SECURE_SSL_REDIRECT = True
+    SECURE_SSL_REDIRECT = True
 
 
 # Application definition
@@ -103,6 +103,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'OPTIONS': {
+            'timeout': 20,
+            'pragmas': {
+                'journal_mode': 'wal',
+                'cache_size': '-64000',
+                'synchronous': 'NORMAL',
+            }
+        }
     }
 }
 
@@ -154,3 +162,4 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
