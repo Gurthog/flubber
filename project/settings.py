@@ -105,11 +105,11 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
         'OPTIONS': {
             'timeout': 20,
-            'pragmas': {
-                'journal_mode': 'wal',
-                'cache_size': '-64000',
-                'synchronous': 'NORMAL',
-            }
+            'init_command': (
+                'PRAGMA journal_mode=WAL;'
+                'PRAGMA cache_size=-64000;'
+                'PRAGMA synchronous=NORMAL;'
+            )
         }
     }
 }
