@@ -1,10 +1,32 @@
 {% extends 'home/base.html' %}
+{% load static %}
+
 
 {% block body %}
 
 <div>
-  <a href="{% url 'sandbox:home' %}">Sandbox</a>
+  <a href="{% url 'sandbox:home' %}">Portal Room..</a>
 </div>
+
+
+<style>
+
+body {
+  background-image: url("{% static 'home/flubber.gif' %}");
+  background-repeat: repeat;
+}
+
+div {
+  text-align: center;
+}
+
+a {
+  font-size: 24pt;
+  font-weight: bold;
+  color: white;
+}
+
+</style>
 
 {% endblock body %}
 
