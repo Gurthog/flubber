@@ -1,15 +1,17 @@
 <!DOCTYPE HTML>
 {% load static %}
 
-<html>
+<html lang="en">
 
 <head>
-  <link rel="icon" href="{% static 'favicon.gif' %}" type="image/gif">
+    <meta charset="UTF-8">
+    <link rel="icon" href="{% static 'favicon.png' %}" type="image/png">
+
+    {% block head %}{% endblock %}
 </head>
 
 <body>
-{% block body %}
-{% endblock body %}
+    {% block body %}{% endblock %}
 </body>
 
 </html>
