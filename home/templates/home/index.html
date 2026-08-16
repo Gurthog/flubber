@@ -6,9 +6,11 @@
 {% endblock head %}
 
 {% block body %}
-<div>
-    <a href="{% url 'wow:home' %}">WoW</a>
-    <a href="{% url 'sandbox:home' %}">Sandbox</a>
+<div id="nav__container">
+    <div id="nav">
+        <a href="{% url 'wow:home' %}">Bungle</a>
+        <a href="{% url 'sandbox:home' %}">Sandbox</a>
+    </div>
 </div>
 
 <style>
@@ -18,19 +20,27 @@
         background-repeat: repeat;
     }
 
-    div {
-        background-color: tan;
-        border: 2px dashed blue;
-        border-radius: 8px;
-        margin: 20px 12px;
-        padding: 12px;
-        width: fit-content;
-    }
-
     a {
         color: purple;
         font-size: 24pt;
         font-weight: bold;
+    }
+
+    #nav__container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #nav {
+        background-color: tan;
+        border: 2px dashed blue;
+        border-radius: 8px;
+        display: flex;
+        gap: 16px;
+        margin: 20px 12px;
+        padding: 12px;
+        width: fit-content;
     }
 </style>
 {% endblock body %}
