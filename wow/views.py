@@ -4,11 +4,15 @@ from django.shortcuts import (
     reverse,
 )
 
+from . import raiderio
+
 
 def home(request):
     return redirect(reverse("wow:bungle"))
 
 
 def bungle(request):
-    return render(request, "wow/bungle.html")
+    data = raiderio.get_character('bungle', 'khaz-modan')
+    context = { 'c': data }
+    return render(request, "wow/bungle.html", context)
 

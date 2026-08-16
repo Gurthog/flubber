@@ -6,7 +6,14 @@
 {% endblock head %}
 
 {% block body %}
-<h1>Bungle time</h1>
+<div>
+    <h1>Bungle time</h1>
+    <p>I'm pulling this info from an API be nice to me</p>
+    <img src="{{ c.thumbnail_url }}" alt="Bungle">
+    <p>{{ c.name }}-{{ c.realm }}</p>
+    <p>{{ c.race }} {{ c.active_spec_name }} {{ c.class }}</p>
+    <a href="{{ c.profile_url }}" target="_blank">View on Raider.IO</a>
+</div>
 
 <style>
 :root {
