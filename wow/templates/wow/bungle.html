@@ -12,7 +12,7 @@
     <img src="{{ c.thumbnail_url }}" alt="Bungle">
     <p>{{ c.name }}-{{ c.realm }}</p>
     <p>{{ c.race }} {{ c.active_spec_name }} {{ c.class }}</p>
-    <a href="{{ c.profile_url }}" target="_blank">View on Raider.IO</a>
+    <a href="{{ c.profile_url }}" target="_blank" class="leaving">View on Raider.IO</a>
 </div>
 
 <style>
@@ -22,6 +22,10 @@
 
 body {
     background-color: var(--druid-orange);
+}
+
+a.leaving:hover {
+    cursor: url("{% static 'cursor/flightpath.png' %}"), pointer;
 }
 </style>
 {% endblock body %}
