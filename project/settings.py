@@ -65,6 +65,7 @@ INSTALLED_APPS = [
 INSTALLED_APPS.extend([
     'home.apps.HomeConfig',
     'sandbox.apps.SandboxConfig',
+    'wow.apps.WowConfig',
 ])
 
 MIDDLEWARE = [
