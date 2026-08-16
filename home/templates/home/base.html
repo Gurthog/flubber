@@ -14,5 +14,17 @@
     {% block body %}{% endblock %}
 </body>
 
+<style>
+    html, body {
+        cursor: url("{% static 'cursor/normal.png' %}"), auto;
+        height: 100%;
+        width: 100%;
+    }
+
+    a:hover {
+        cursor: url("{% static 'cursor/normal-select.png' %}"), pointer;
+    }
+</style>
+
 </html>
 
