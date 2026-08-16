@@ -1,33 +1,31 @@
 {% extends 'home/base.html' %}
 {% load static %}
 
+{% block head %}
+<title>Flubber</title>
+{% endblock head %}
 
 {% block body %}
-
 <div>
-  <a href="{% url 'sandbox:home' %}">Portal Room..</a>
-  <a href="">Fart shit fart</a>
+    <a href="{% url 'sandbox:home' %}">Wizard..</a>
 </div>
 
-
 <style>
+    body {
+        background-color: blue;
+        background-image: url("{% static 'crystal-p.webp' %}");
+        background-repeat: repeat;
+    }
 
-body {
-  background-image: url("{% static 'home/flubber.gif' %}");
-  background-repeat: repeat;
-}
+    div {
+        text-align: center;
+    }
 
-div {
-  text-align: center;
-}
-
-a {
-  font-size: 24pt;
-  font-weight: bold;
-  color: white;
-}
-
+    a {
+        font-size: 24pt;
+        font-weight: bold;
+        color: white;
+    }
 </style>
-
 {% endblock body %}
 
