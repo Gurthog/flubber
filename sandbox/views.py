@@ -16,6 +16,10 @@ def teleport(request):
 
 # portals
 
+def equidistant(request):
+    return render(request, 'sandbox/portal/equidistant.html')
+
+
 def squeeze(request):
     return render(request, 'sandbox/portal/squeeze.html')
 

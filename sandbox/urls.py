@@ -11,6 +11,7 @@ urlpatterns = [
     path('teleport', views.teleport, name='teleport'),
 
     # portals
+    path('equidistant', views.equidistant, name='equidistant'),
     path('squeeze', views.squeeze, name='squeeze'),
 ]
 

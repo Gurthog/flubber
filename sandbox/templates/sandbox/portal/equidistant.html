@@ -1,0 +1,34 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+
+{% block head %}
+<title>Equidistant</title>
+{% endblock head %}
+
+{% block body %}
+<div>
+    <h1>computer domain</h1>
+</div>
+
+
+<style>
+body {
+    background-image: url({% static 'sandbox/ball-orbit.gif' %});
+    background-size: cover;
+    background-position: top center;
+    background-repeat: repeat-y;
+    height: 100%;
+    width: 100%;
+}
+
+div {
+    background-color: tan;
+    color: brown;
+    margin: 67px;
+    padding: 24px;
+    width: fit-content;
+}
+</style>
+{% endblock body %}
+
