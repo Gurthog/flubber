@@ -156,6 +156,12 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / 'static'
 
+STATIC_SHARE = os.getenv('STATIC_SHARE')
+
+if STATIC_SHARE:
+    STATICFILES_DIRS = [
+        STATIC_SHARE,
+    ]
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
