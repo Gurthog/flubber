@@ -29,10 +29,13 @@
         <div class="dungeon-run" style="--bg-url: url('{{ d.background_image_url }}')">
             <div class="dungeon-run__header">
                 <img src="{{ d.icon_url }}" alt={{ d.dungeon }} class="dungeon-run__icon">
-                <span><b>+{{ d.mythic_level }} {{ d.dungeon }}</b><br>{{ d.role }}</span>
+                <span>
+                    <b>+{{ d.mythic_level }} {{ d.dungeon }}</b><br>
+                    Score: {{ d.score }}
+                </span>
             </div>
             <p>
-                Score: {{ d.score }}<br>
+                {{ d.role }}<br>
                 {{ d.completed_at }}
             </p>
             <a href="{{ d.url }}" target="_blank" class="leaving">raider.io</a>
@@ -93,8 +96,9 @@ a.leaving:hover {
     background-repeat: no-repeat;
     border: 2px solid grey;
     border-radius: 8px;
-    padding: 12px 12px;
     margin-bottom: 8px;
+    padding: 12px 12px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     width: 300px;
 }
 
