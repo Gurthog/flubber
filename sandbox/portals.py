@@ -1,6 +1,6 @@
 PORTALS = [
-    'home:home',
     'sandbox:equidistant',
+    'sandbox:periodic',
     'sandbox:squeeze',
     'wow:bungle',
 ]

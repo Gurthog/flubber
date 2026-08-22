@@ -20,6 +20,10 @@ def equidistant(request):
     return render(request, 'sandbox/portal/equidistant.html')
 
 
+def periodic(request):
+    return render(request, 'sandbox/portal/periodic.html')
+
+
 def squeeze(request):
     return render(request, 'sandbox/portal/squeeze.html')
 

@@ -1,0 +1,22 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block head %}
+<title>Periodic Table</title>
+{% endblock head %}
+
+{% block body %}
+<img src="{% static 'sandbox/periodic_table.svg' %}">
+
+<style>
+body {
+    background-color: #af885f;
+}
+
+img {
+    margin: 5%;
+    width: 90vw;
+}
+</style>
+{% endblock body %}
+

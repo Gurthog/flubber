@@ -12,6 +12,7 @@ urlpatterns = [
 
     # portals
     path('equidistant', views.equidistant, name='equidistant'),
+    path('periodic', views.periodic, name='periodic'),
     path('squeeze', views.squeeze, name='squeeze'),
 ]
 
