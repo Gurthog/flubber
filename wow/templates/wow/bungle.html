@@ -22,6 +22,24 @@
         <a href="{{ c.profile_url }}" target="_blank" class="leaving">View on raider.io</a>
     </div>
 
+    <p>Mythic+ Rating: {{ mythic_rating }}</p>
+
+    <div id="mythic-stats">
+        <table>
+            <tr>
+                <th>Dungeon</th>
+                <th>Highest</th>
+                <th>Total Runs</th>
+            {% for row in stats %}
+            <tr>
+                <td>{{ row.dungeon }}</td>
+                <td class="center">+{{ row.mythic_level }}</td>
+                <td class="center">{{ row.season_runs_total }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
     <div id="past-runs">
         <h2>Recent Mythic+ Runs</h2>
         {% for d in c.mythic_plus_recent_runs %}
@@ -67,6 +85,18 @@ a.leaving:hover {
     cursor: url("{% static 'cursor/flightpath.png' %}"), pointer;
 }
 
+table {
+    border: 2px solid grey;
+    border-collapse: collapse;
+    border-radius: 8px;
+}
+
+th, td {
+    border: 1px solid grey;
+    padding: 6px;
+}
+
+
 #avatar-container {
     display: flex;
     gap: 16px;
@@ -87,6 +117,10 @@ a.leaving:hover {
 
 .avatar {
     border: 2px solid var(--druid-orange);
+}
+
+.center {
+    text-align: center;
 }
 
 .dungeon-run {
