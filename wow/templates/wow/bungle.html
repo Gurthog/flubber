@@ -7,37 +7,36 @@
 
 {% block body %}
 <div id="content">
-    <p>I'm pulling this info from an API be nice to me</p>
-    <div id="profile">
-        <div id="avatar-container">
-            <img src="{% static 'wow/moon.webp' %}" alt="wrath">
-            <img src="{{ c.thumbnail_url }}" alt="Bungle" class="avatar">
-            <img src="{% static 'wow/wrath.webp' %}" alt="wrath">
+    <div>
+        <div id="profile">
+            <div id="avatar-container">
+                <img src="{% static 'wow/moon.webp' %}" alt="moon">
+                <img src="{{ c.thumbnail_url }}" alt="Bungle" class="avatar">
+                <img src="{% static 'wow/wrath.webp' %}" alt="sun">
+            </div>
+            <p>
+                <b>{{ c.name }}</b> {{ c.realm }}<br>
+                {{ c.race }} {{ c.active_spec_name }} {{ c.class }}
+            </p>
+            <a href="{{ c.profile_url }}" target="_blank" class="leaving">View on raider.io</a>
         </div>
-        <p><b>{{ c.name }}</b></p>
-        <p>
-            {{ c.race }} {{ c.active_spec_name }} {{ c.class }}<br>
-            [ {{ c.guild.name }} ] {{ c.realm }}
-        </p>
-        <a href="{{ c.profile_url }}" target="_blank" class="leaving">View on raider.io</a>
-    </div>
 
-    <p>Mythic+ Rating: {{ mythic_rating }}</p>
-
-    <div id="mythic-stats">
-        <table>
-            <tr>
-                <th>Dungeon</th>
-                <th>Highest</th>
-                <th>Total Runs</th>
-            {% for row in stats %}
-            <tr>
-                <td>{{ row.dungeon }}</td>
-                <td class="center">+{{ row.mythic_level }}</td>
-                <td class="center">{{ row.season_runs_total }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+        <div id="mythic-stats">
+            <p>Mythic+ Rating: {{ mythic_rating }}</p>
+            <table>
+                <tr>
+                    <th>Dungeon</th>
+                    <th>Highest</th>
+                    <th>Total Runs</th>
+                {% for row in stats %}
+                <tr>
+                    <td>{{ row.dungeon }}</td>
+                    <td class="center">+{{ row.mythic_level }}</td>
+                    <td class="center">{{ row.season_runs_total }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
     </div>
 
     <div id="past-runs">
@@ -99,20 +98,24 @@ th, td {
 
 #avatar-container {
     display: flex;
-    gap: 16px;
+    gap: 24px;
     justify-content: center;
     width: 100%;
 }
 
 #content {
+    display: flex;
+    gap: 32px;
     width: fit-content;
 }
 
 #profile {
     background-color: green;
+    border: 2px solid grey;
     border-radius: 8px;
     padding: 16px 16px;
-    width: 300px;
+    height: fit-content;
+    width: fit-content;
 }
 
 .avatar {
